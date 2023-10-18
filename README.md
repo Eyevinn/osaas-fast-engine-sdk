@@ -1,80 +1,85 @@
-## @
+## Eyevinn FAST Channel Engine SDK
 
-This generator creates TypeScript/JavaScript client that utilizes fetch-api.
 
-### Building
-
-To build and compile the typescript sources to javascript use:
+### Installation
 ```
-npm install
-npm run build
-```
-
-### Publishing
-
-First build the package then run ```npm publish```
-
-### Consuming
-
-Navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
-
-```
-npm install @ --save
-```
-
-_unPublished (not recommended):_
-
-```
-npm install PATH_TO_GENERATED_PACKAGE --save
+npm install @eyevinn/fast-engine-sdk
 ```
 
 ### Usage
-
-Below code snippet shows exemplary usage of the configuration and the API based 
-on the typical `PetStore` example used for OpenAPI. 
-
 ```
-import * as your_api from 'your_api_package'
+import {
+  AuthMethodsConfiguration,
+  ChannelPostRequest,
+  ChannelPostRequestTypeEnum,
+  DefaultApi,
+  TokenPostRequest,
+  createConfiguration,
+} from "fast-engine-sdk";
+const authConfig: AuthMethodsConfiguration = {
+  jwtToken:
+    "Bearer YOUR_TOKEN",
+};
+const configuration = createConfiguration({
+  authMethods: authConfig,
+});
+const apiInstance = new DefaultApi(configuration);
+```
 
-// Covers all auth methods included in your OpenAPI yaml definition
-const authConfig: your_api.AuthMethodsConfiguration = {
-    "api_key": "YOUR_API_KEY"
-}
+#### Generating a trial token
+```
+const body: TokenPostRequest = {
+  company: "YOUR_COMPANY",
+  email: "YOUR_EMAIL",
+};
 
-// Implements a simple middleware to modify requests before (`pre`) they are sent
-// and after (`post`) they have been received 
-class Test implements your_api.Middleware {
-    pre(context: your_api.RequestContext): Promise<your_api.RequestContext> {
-        // Modify context here and return
-        return Promise.resolve(context);
-    }
+apiInstance
+  .tokenPost(body)
+  .then((data: any) => {
+    console.log("Token generated: ", data);
+  })
+  .catch((error: any) => {
+    console.error("Error generating token: ", error);
+  });
+```
 
-    post(context: your_api.ResponseContext): Promise<your_api.ResponseContext> {
-        return Promise.resolve(context);
-    }
+#### Launching a new FAST channel
+```
+const body: ChannelPostRequest = {
+  name: "CHANNEL_NAME",
+  type: "CHANNEL_TYPE",
+  url: "VIDEO_URL",
+};
 
-}
+apiInstance
+  .channelPost(body)
+  .then((data: any) => {
+    console.log("Launched a new FAST channel! ", data);
+  })
+  .catch((error: any) => {
+    console.error("Error launching new FAST channel: ", error);
+  });
+```
+#### Getting all running channels
+```
+apiInstance
+  .channelGet()
+  .then((data: any) => {
+    console.log("All channels: ", data);
+  })
+  .catch((error: any) => {
+    console.error("Error getting all channels: ", error);
+  });
+```
 
-// Create configuration parameter object
-const configurationParameters = {
-    httpApi: new your_api.JQueryHttpLibrary(), // Can also be ignored - default is usually fine
-    baseServer: your_api.servers[0], // First server is default
-    authMethods: authConfig, // No auth is default
-    promiseMiddleware: [new Test()],
-}
-
-// Convert to actual configuration
-const config = your_api.createConfiguration(configurationParameters);
-
-// Use configuration with your_api
-const api = new your_api.PetApi(config);
-your_api.Pet p = new your_api.Pet();
-p.name = "My new pet";
-p.photoUrls = [];
-p.tags = [];
-p.status = "available";
-Promise<your_api.Pet> createdPet = api.addPet(p);
-
+#### Stopping and removing a channel
+```
+apiInstance
+  .channelIdDelete("CHANNEL_ID")
+  .then((data: any) => {
+    console.log("Channel deleted!");
+  })
+  .catch((error: any) => {
+    console.error("Channel could not be deleted ", error);
+  });
 ```
