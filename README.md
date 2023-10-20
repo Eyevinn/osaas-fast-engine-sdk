@@ -1,6 +1,6 @@
 ## Open Source FAST Engine as a Service SDK
 
-The `@eyevinn/fast-engine-sdk` is an SDK for the [hosted version of the open source FAST Engine](https://fast.docs.eyevinn.technology/osaas.html). For access you need a `TOKEN` and to request a token or get more information about the service contact sales@eyevinn.se however if you want to try it out we have a test environment available that you can use.
+The `@osaas/fast-engine-client` is an SDK for the [hosted version of the open source FAST Engine](https://fast.docs.eyevinn.technology/osaas.html). For access you need a `TOKEN` and to request a token or get more information about the service contact sales@eyevinn.se however if you want to try it out we have a test environment available that you can use.
 
 The address to the API in the test environment is `https://api-ce.stage.osaas.io/` and here you can generate a trial-token to try this out.
 
