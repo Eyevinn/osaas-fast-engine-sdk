@@ -1,19 +1,18 @@
 {
   "name": "@eyevinn/fast-engine-sdk",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "FAST Channel Engine Client-SDK",
-  "author": "OpenAPI-Generator Contributors",
+  "author": "Eyevinn Technology AB",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+    "url": "https://github.com/Eyevinn/osaas-fast-engine-sdk"
   },
   "keywords": [
-    "fetch",
-    "typescript",
-    "openapi-client",
-    "openapi-generator"
+    "channel-engine",
+    "sdk",
+    "typescript"
   ],
-  "license": "Unlicense",
+  "license": "MIT",
   "main": "./dist/index.js",
   "type": "commonjs",
   "exports": {
