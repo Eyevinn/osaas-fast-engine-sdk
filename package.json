@@ -1,6 +1,6 @@
 {
   "name": "@osaas/fast-engine-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OSaaS FAST Channel Engine Client Library",
   "author": "Eyevinn Technology AB",
   "repository": {
