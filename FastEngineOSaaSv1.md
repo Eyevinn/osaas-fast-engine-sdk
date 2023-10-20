@@ -1,24 +1,23 @@
 # .FastEngineOSaaSv1
 
-All URIs are relative to *http://localhost*
+All URIs are relative to _http://localhost_
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**channelGet**](DefaultApi.md#channelGet) | **GET** /channel | 
-[**channelIdDelete**](DefaultApi.md#channelIdDelete) | **DELETE** /channel/{id} | 
-[**channelIdGet**](DefaultApi.md#channelIdGet) | **GET** /channel/{id} | 
-[**channelPost**](DefaultApi.md#channelPost) | **POST** /channel | 
-[**rootGet**](DefaultApi.md#rootGet) | **GET** / | 
-[**tokenPost**](DefaultApi.md#tokenPost) | **POST** /token | 
-
+| Method                                               | HTTP request             | Description |
+| ---------------------------------------------------- | ------------------------ | ----------- |
+| [**channelGet**](DefaultApi.md#channelGet)           | **GET** /channel         |
+| [**channelIdDelete**](DefaultApi.md#channelIdDelete) | **DELETE** /channel/{id} |
+| [**channelIdGet**](DefaultApi.md#channelIdGet)       | **GET** /channel/{id}    |
+| [**channelPost**](DefaultApi.md#channelPost)         | **POST** /channel        |
+| [**rootGet**](DefaultApi.md#rootGet)                 | **GET** /                |
+| [**tokenPost**](DefaultApi.md#tokenPost)             | **POST** /token          |
 
 # **channelGet**
+
 > Array<ChannelGet200ResponseInner> channelGet()
 
 List all running FAST channels
 
 ### Example
-
 
 ```typescript
 import {  } from '';
@@ -32,10 +31,9 @@ apiInstance.channelGet().then((data:any) => {
 }).catch((error:any) => console.error(error));
 ```
 
-
 ### Parameters
-This endpoint does not need any parameter.
 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -47,24 +45,24 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
-
+- **Content-Type**: Not defined
+- **Accept**: _/_
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Default Response |  -  |
+
+| Status code | Description      | Response headers |
+| ----------- | ---------------- | ---------------- |
+| **200**     | Default Response | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **channelIdDelete**
+
 > string channelIdDelete()
 
 Stop and remove a FAST channel
 
 ### Example
-
 
 ```typescript
 import {  } from '';
@@ -80,13 +78,11 @@ apiInstance.channelIdDelete(id).then((data:any) => {
 }).catch((error:any) => console.error(error));
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**] | Channel Id | defaults to undefined
-
+| Name   | Type         | Description | Notes                 |
+| ------ | ------------ | ----------- | --------------------- |
+| **id** | [**string**] | Channel Id  | defaults to undefined |
 
 ### Return type
 
@@ -98,24 +94,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
-
+- **Content-Type**: Not defined
+- **Accept**: _/_
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Default Response |  -  |
+
+| Status code | Description      | Response headers |
+| ----------- | ---------------- | ---------------- |
+| **204**     | Default Response | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **channelIdGet**
+
 > ChannelGet200ResponseInner channelIdGet()
 
 Obtain status and playback URL for a FAST channel
 
 ### Example
-
 
 ```typescript
 import {  } from '';
@@ -131,13 +127,11 @@ apiInstance.channelIdGet(id).then((data:any) => {
 }).catch((error:any) => console.error(error));
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**] | Channel Id | defaults to undefined
-
+| Name   | Type         | Description | Notes                 |
+| ------ | ------------ | ----------- | --------------------- |
+| **id** | [**string**] | Channel Id  | defaults to undefined |
 
 ### Return type
 
@@ -149,24 +143,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
-
+- **Content-Type**: Not defined
+- **Accept**: _/_
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Default Response |  -  |
+
+| Status code | Description      | Response headers |
+| ----------- | ---------------- | ---------------- |
+| **200**     | Default Response | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **channelPost**
+
 > ChannelPost201Response channelPost()
 
 Launch a new FAST channel
 
 ### Example
-
 
 ```typescript
 import {  } from '';
@@ -201,13 +195,11 @@ apiInstance.channelPost(body).then((data:any) => {
 }).catch((error:any) => console.error(error));
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **ChannelPostRequest**|  |
-
+| Name     | Type                   | Description | Notes |
+| -------- | ---------------------- | ----------- | ----- |
+| **body** | **ChannelPostRequest** |             |
 
 ### Return type
 
@@ -219,24 +211,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
-
+- **Content-Type**: Not defined
+- **Accept**: _/_
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Default Response |  -  |
+
+| Status code | Description      | Response headers |
+| ----------- | ---------------- | ---------------- |
+| **201**     | Default Response | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **rootGet**
+
 > string rootGet()
 
 Say hello
 
 ### Example
-
 
 ```typescript
 import {  } from '';
@@ -252,10 +244,9 @@ apiInstance.rootGet(body).then((data:any) => {
 }).catch((error:any) => console.error(error));
 ```
 
-
 ### Parameters
-This endpoint does not need any parameter.
 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -267,24 +258,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
-
+- **Content-Type**: Not defined
+- **Accept**: _/_
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The magical words! |  -  |
+
+| Status code | Description        | Response headers |
+| ----------- | ------------------ | ---------------- |
+| **200**     | The magical words! | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **tokenPost**
+
 > string tokenPost()
 
 Generate a trial token
 
 ### Example
-
 
 ```typescript
 import {  } from '';
@@ -306,13 +297,11 @@ apiInstance.tokenPost(body).then((data:any) => {
 }).catch((error:any) => console.error(error));
 ```
 
-
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **TokenPostRequest**|  |
-
+| Name     | Type                 | Description | Notes |
+| -------- | -------------------- | ----------- | ----- |
+| **body** | **TokenPostRequest** |             |
 
 ### Return type
 
@@ -324,15 +313,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
-
+- **Content-Type**: Not defined
+- **Accept**: _/_
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Default Response |  -  |
+
+| Status code | Description      | Response headers |
+| ----------- | ---------------- | ---------------- |
+| **200**     | Default Response | -                |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-

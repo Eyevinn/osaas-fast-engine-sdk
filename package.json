@@ -1,7 +1,7 @@
 {
-  "name": "@eyevinn/fast-engine-sdk",
+  "name": "@osaas/fast-engine-client",
   "version": "0.1.0",
-  "description": "FAST Channel Engine Client-SDK",
+  "description": "OSaaS FAST Channel Engine Client Library",
   "author": "Eyevinn Technology AB",
   "repository": {
     "type": "git",
@@ -23,16 +23,26 @@
   },
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "pretty": "prettier --check --ignore-unknown .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "whatwg-fetch": "^3.0.0",
     "es6-promise": "^4.2.4",
-    "url-parse": "^1.4.3"
+    "url-parse": "^1.4.3",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "typescript": "^4.0",
-    "@types/url-parse": "1.4.4"
+    "@types/node": "^20.8.7",
+    "@types/url-parse": "1.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "typescript": "^4.0"
   }
 }
