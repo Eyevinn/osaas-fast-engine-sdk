@@ -7,7 +7,7 @@ The address to the API in the test environment is `https://api-ce.stage.osaas.io
 ### Installation
 
 ```
-npm install @eyevinn/fast-engine-sdk
+npm install @osaas/fast-engine-client
 ```
 
 ### Usage
