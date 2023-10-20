@@ -22,7 +22,7 @@ async function main() {
       await client.channelIdDelete(ch.id);
     }
   } catch (err) {
-    console.log(err.Body.body);
+    console.log(err);
   }
 
   // Create a channel
