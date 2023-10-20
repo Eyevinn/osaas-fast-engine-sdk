@@ -19,14 +19,10 @@
     "lib": [ "es6", "dom" ],
   },
   "include": [
-    "./apis/**/*.ts",
-    "./auth/**/*.ts",
-    "./http/**/*.ts",
-    "./models/**/*.ts",
-    "./types/**/*.ts",
+    "./src/**/*.ts",
   ],
   "exclude": [
-    "./dist",
+    "dist",
     "node_modules"
   ]
 }

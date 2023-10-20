@@ -17,7 +17,7 @@ import {
   AuthMethodsConfiguration,
   ChannelPostRequest,
   ChannelPostRequestTypeEnum,
-  DefaultApi,
+  FastEngineOSaaSv1,
   TokenPostRequest,
   createConfiguration,
 } from "@eyevinn/fast-engine-sdk";
@@ -27,8 +27,9 @@ const authConfig: AuthMethodsConfiguration = {
 };
 const configuration = createConfiguration({
   authMethods: authConfig,
+  apiEndpoint: 'https://api-ce.stage.osaas.io'
 });
-const apiInstance = new DefaultApi(configuration);
+const apiInstance = new FastEngineOSaaSv1(configuration);
 ```
 
 #### Generating a trial token
