@@ -1,4 +1,5 @@
 import { Observable, from } from '../rxjsStub';
+import { ConfigurationParameters } from '../configuration';
 
 export * from './isomorphic-fetch';
 
@@ -33,12 +34,16 @@ export class HttpException extends Error {
  */
 export type RequestBody = undefined | string | FormData | URLSearchParams;
 
+export const baseUrl = {
+    apiEndpoint: '',
+};
+
 function ensureAbsoluteUrl(url: string) {
     if (url.startsWith("http://") || url.startsWith("https://")) {
         return url;
     }
-    const baseURL = 'https://api-ce.stage.osaas.io';
-    return baseURL + url;
+    
+    return baseUrl.apiEndpoint + url;
 }
 
 /**

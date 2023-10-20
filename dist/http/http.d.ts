@@ -18,6 +18,9 @@ export declare class HttpException extends Error {
     constructor(msg: string);
 }
 export type RequestBody = undefined | string | FormData | URLSearchParams;
+export declare const baseUrl: {
+    apiEndpoint: string;
+};
 export declare class RequestContext {
     private httpMethod;
     private headers;

@@ -65,7 +65,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HttpInfo = exports.wrapHttpLibrary = exports.ResponseContext = exports.SelfDecodingBody = exports.RequestContext = exports.HttpException = exports.HttpMethod = void 0;
+exports.HttpInfo = exports.wrapHttpLibrary = exports.ResponseContext = exports.SelfDecodingBody = exports.RequestContext = exports.baseUrl = exports.HttpException = exports.HttpMethod = void 0;
 var rxjsStub_1 = require("../rxjsStub");
 __exportStar(require("./isomorphic-fetch"), exports);
 var HttpMethod;
@@ -88,12 +88,14 @@ var HttpException = (function (_super) {
     return HttpException;
 }(Error));
 exports.HttpException = HttpException;
+exports.baseUrl = {
+    apiEndpoint: '',
+};
 function ensureAbsoluteUrl(url) {
     if (url.startsWith("http://") || url.startsWith("https://")) {
         return url;
     }
-    var baseURL = 'https://api-ce.stage.osaas.io';
-    return baseURL + url;
+    return exports.baseUrl.apiEndpoint + url;
 }
 var RequestContext = (function () {
     function RequestContext(url, httpMethod) {

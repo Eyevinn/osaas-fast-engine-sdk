@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ObservableDefaultApi = void 0;
 var rxjsStub_1 = require("../rxjsStub");
 var rxjsStub_2 = require("../rxjsStub");
-var DefaultApi_1 = require("../apis/DefaultApi");
+var FastEngineOSaaSv1_1 = require("../apis/FastEngineOSaaSv1");
 var ObservableDefaultApi = (function () {
     function ObservableDefaultApi(configuration, requestFactory, responseProcessor) {
         this.configuration = configuration;
-        this.requestFactory = requestFactory || new DefaultApi_1.DefaultApiRequestFactory(configuration);
-        this.responseProcessor = responseProcessor || new DefaultApi_1.DefaultApiResponseProcessor();
+        this.requestFactory = requestFactory || new FastEngineOSaaSv1_1.DefaultApiRequestFactory(configuration);
+        this.responseProcessor = responseProcessor || new FastEngineOSaaSv1_1.DefaultApiResponseProcessor();
     }
     ObservableDefaultApi.prototype.channelGetWithHttpInfo = function (_options) {
         var _this = this;

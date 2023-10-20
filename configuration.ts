@@ -1,4 +1,4 @@
-import { HttpLibrary } from "./http/http";
+import { HttpLibrary, baseUrl } from "./http/http";
 import { Middleware, PromiseMiddleware, PromiseMiddlewareWrapper } from "./middleware";
 import { IsomorphicFetchHttpLibrary as DefaultHttpLibrary } from "./http/isomorphic-fetch";
 import { BaseServerConfiguration, server1 } from "./servers";
@@ -49,7 +49,11 @@ export interface ConfigurationParameters {
      * according to the OpenAPI yaml definition. For the definition, please refer to 
      * `./auth/auth`
      */
-    authMethods?: AuthMethodsConfiguration
+    authMethods?: AuthMethodsConfiguration;
+    /**
+     * The API endpoint used for the specific configuration
+     */
+    apiEndpoint?: string;
 }
 
 /**
@@ -63,6 +67,7 @@ export interface ConfigurationParameters {
  *    - middleware: []
  *    - promiseMiddleware: []
  *    - authMethods: {}
+ *    - apiEndpoint: 'https://api-ce.prod.osaas.io'
  *
  * @param conf partial configuration
  */
@@ -71,8 +76,15 @@ export function createConfiguration(conf: ConfigurationParameters = {}): Configu
         baseServer: conf.baseServer !== undefined ? conf.baseServer : server1,
         httpApi: conf.httpApi || new DefaultHttpLibrary(),
         middleware: conf.middleware || [],
-        authMethods: configureAuthMethods(conf.authMethods)
+        authMethods: configureAuthMethods(conf.authMethods),
     };
+
+    if (conf.apiEndpoint) {
+        baseUrl.apiEndpoint = conf.apiEndpoint;
+    } else {
+        baseUrl.apiEndpoint = 'https://api-ce.prod.osaas.io';
+    }
+
     if (conf.promiseMiddleware) {
         conf.promiseMiddleware.forEach(
             m => configuration.middleware.push(new PromiseMiddlewareWrapper(m))

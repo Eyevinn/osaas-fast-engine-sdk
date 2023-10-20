@@ -4,7 +4,7 @@ import { ChannelGet200ResponseInner } from '../models/ChannelGet200ResponseInner
 import { ChannelPost201Response } from '../models/ChannelPost201Response';
 import { ChannelPostRequest } from '../models/ChannelPostRequest';
 import { TokenPostRequest } from '../models/TokenPostRequest';
-import { DefaultApiRequestFactory, DefaultApiResponseProcessor } from "../apis/DefaultApi";
+import { DefaultApiRequestFactory, DefaultApiResponseProcessor } from "../apis/FastEngineOSaaSv1";
 export declare class PromiseDefaultApi {
     private api;
     constructor(configuration: Configuration, requestFactory?: DefaultApiRequestFactory, responseProcessor?: DefaultApiResponseProcessor);

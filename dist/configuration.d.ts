@@ -14,5 +14,6 @@ export interface ConfigurationParameters {
     middleware?: Middleware[];
     promiseMiddleware?: PromiseMiddleware[];
     authMethods?: AuthMethodsConfiguration;
+    apiEndpoint?: string;
 }
 export declare function createConfiguration(conf?: ConfigurationParameters): Configuration;

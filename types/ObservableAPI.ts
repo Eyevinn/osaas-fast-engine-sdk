@@ -9,7 +9,7 @@ import { ChannelPostRequestOpts } from '../models/ChannelPostRequestOpts';
 import { ChannelPostRequestOptsPreroll } from '../models/ChannelPostRequestOptsPreroll';
 import { TokenPostRequest } from '../models/TokenPostRequest';
 
-import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/DefaultApi";
+import { DefaultApiRequestFactory, DefaultApiResponseProcessor} from "../apis/FastEngineOSaaSv1";
 export class ObservableDefaultApi {
     private requestFactory: DefaultApiRequestFactory;
     private responseProcessor: DefaultApiResponseProcessor;
