@@ -18,11 +18,15 @@
     "noLib": false,
     "lib": [ "es6", "dom" ],
   },
-  "exclude": [
-    "dist",
-    "node_modules"
+  "include": [
+    "./apis/**/*.ts",
+    "./auth/**/*.ts",
+    "./http/**/*.ts",
+    "./models/**/*.ts",
+    "./types/**/*.ts",
   ],
-  "filesGlob": [
-    "./**/*.ts",
+  "exclude": [
+    "./dist",
+    "node_modules"
   ]
 }
