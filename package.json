@@ -8,7 +8,7 @@
     "url": "https://github.com/Eyevinn/osaas-fast-engine-sdk"
   },
   "files": [
-    "dist/ "
+    "dist/"
   ],
   "keywords": [
     "channel-engine",
